@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Markus Juppi – Full-Stack Developer</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="profile-pic">
+        <img src="profile.jpg" alt="Markus Juppi">
+      </div>
+      <h1>Markus Juppi</h1>
+      <p class="tagline">Full-Stack Developer | 3D Modeling & AI Enthusiast</p>
+      
+      <div class="contact-links">
+        <a href="mailto:juppi.markus@gmail.com">juppi.markus@gmail.com</a>
+        <a href="https://www.linkedin.com/in/markus-juppi-752a74234/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <!-- SIDEBAR NAVBAR -->
+    <nav class="sidebar">
+      <ul>
+        <li><a href="#" data-target="profile" class="nav-link active">🧑‍💻 Profile</a></li>
+        <li><a href="#" data-target="experience" class="nav-link">💼 Experience</a></li>
+        <li><a href="#" data-target="education" class="nav-link">🎓 Education</a></li>
+        <li><a href="#" data-target="skills" class="nav-link">🛠️ Skills</a></li>
+        <li><a href="#" data-target="projects" class="nav-link">📁 Projects</a></li>
+      </ul>
+    </nav>
+
+    <!-- CONTENT AREA (switches here) -->
+    <div class="content-area animate-in">
+      
+      <!-- PROFILE -->
+      <div id="profile" class="section active">
+        <h2>Profile</h2>
+        <p>I am eager to learn new things and work efficiently in collaboration with diverse individuals. I have a strong background in mathematics and IT. During my military service, I worked as a clerk and 3D modeling support staff for a virtual training environment. I am adaptable and thrive in different work environments, from physically demanding outdoor tasks to precision-focused office work.</p>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div id="experience" class="section">
+        <h2>Work Experience</h2>
+        <div class="job">
+          <h3>Full-stack Developer (Internship)</h3>
+          <p class="date-company">Casamedia – Spring 2025</p>
+          <ul><li>Flutter frontend and JavaScript backend with MongoDB</li></ul>
+        </div>
+        <div class="job">
+          <h3>Video Production Assistant</h3>
+          <p class="date-company">StarJump Startup – Summer 2024</p>
+          <ul><li>Production of immersive exercise video content</li></ul>
+        </div>
+        <div class="job">
+          <h3>Summer Employee</h3>
+          <p class="date-company">City of Oulu – 2.7.2014 – 1.8.2014</p>
+          <ul><li>Maintenance of parks and litter collection</li></ul>
+        </div>
+        <div class="job">
+          <h3>Clerk & 3D Modeling Support</h3>
+          <p class="date-company">Finnish Defence Forces – 3/2018</p>
+          <ul><li>Virtual training environment support</li></ul>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div id="education" class="section">
+        <h2>Education</h2>
+        <div class="edu-item">
+          <h3>Bachelor of Engineering, Information Technology</h3>
+          <p class="date-company">LAB University of Applied Sciences – 2022–2025</p>
+        </div>
+        <div class="edu-item">
+          <h3>Mathematics Student</h3>
+          <p class="date-company">University of Oulu – 2013–2021</p>
+        </div>
+        <div class="edu-item">
+          <h3>High School Diploma</h3>
+          <p class="date-company">Helsingin Medialukio – 2013</p>
+          <p>Finnish, English, Mathematics, Biology</p>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div id="skills" class="section">
+        <h2>Skills</h2>
+        
+        <div class="skill-category">
+          <h3>Languages</h3>
+          <ul>
+            <li>Finnish: Native</li>
+            <li>English: Very strong</li>
+            <li>Swedish: Acceptable (advanced course)</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>IT & Programming</h3>
+          <ul>
+            <li>HTML, CSS, JavaScript/TypeScript (React, Angular, NestJS, GraphQL)</li>
+            <li>C/C++, C#, Java, Kotlin, Python, R</li>
+            <li>Flutter • MongoDB • LaTeX • Photoshop • OBS • Video editing</li>
+            <li>Blender, Unity, Unreal Engine</li>
+            <li>AI image generators & local AI solutions</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Hobbies</h3>
+          <ul>
+            <li>Video editing & content creation</li>
+            <li>PC gaming and computer building</li>
+          </ul>
+        </div>
+      </div>
+      <!-- PROJECTS -->
+      <div id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="project-item">
+          <h3>School Project - Weather App</h3>
+          <p>A simple weather application that displays current weather information for a given location.</p>
+          <a href="https://github.com/MJuppi/WeatherApp" target="_blank" class="project-link">→ GitHub Repository</a>
+        </div>
+        <div class="project-item">
+          <h3>Kymiring - Race track</h3>
+          <p>Finnish race track modded into Assetto Corsa, personal project just to see how it looks.</p>
+          <a href="https://youtu.be/aPCkx0b9GpA" target="_blank" class="project-link">→ YouTube Demo</a>
+        </div>
+        <div class="project-item">
+          <h3>Staircase</h3>
+          <p>A 3D model of a modern staircase designed using Blender.</p>
+          <a href="https://youtu.be/GmSHyVg9ynU" target="_blank" class="project-link">→ YouTube Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Markus Juppi • Built with HTML + CSS + JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

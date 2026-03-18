@@ -1,0 +1,115 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  color: #e0e0e0;
+  background: #0f0f1a;
+}
+
+.hero {
+  background: linear-gradient(#1a1a2e, #0f0f1a);
+  text-align: center;
+  padding: 100px 20px 60px;
+}
+.profile-pic {
+  width: 180px; height: 180px; margin:0 auto 20px;
+  border-radius:50%; overflow:hidden;
+  border:4px solid #00d4ff; box-shadow:0 0 30px rgba(0,212,255,0.3);
+}
+.profile-pic img { width:100%; height:100%; object-fit:cover; }
+
+h1 { font-size:3rem; color:#fff; }
+.tagline { font-size:1.3rem; color:#a0a0ff; margin:10px 0 20px; }
+
+.contact-links {
+  display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;
+}
+.contact-links a { color:#00d4ff; text-decoration:none; }
+
+.main-layout {
+  display:flex;
+  max-width:1200px;
+  margin:0 auto;
+  min-height: calc(100vh - 380px);
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #161622;
+  padding: 40px 20px;
+  border-right: 1px solid #1e1e2f;
+}
+.sidebar ul {
+  list-style:none;
+}
+.sidebar a {
+  display:block;
+  padding:14px 20px;
+  color:#ccc;
+  text-decoration:none;
+  font-size:1.1rem;
+  border-radius:8px;
+  transition:0.3s;
+}
+.sidebar a:hover,
+.sidebar a.active {
+  background:#00d4ff;
+  color:#000;
+  font-weight:600;
+}
+
+/* CONTENT AREA */
+.content-area {
+  flex:1;
+  padding:40px 40px 80px;
+  background:#0f0f1a;
+}
+
+.section {
+  display:none;
+  opacity:0;
+  transition:opacity 0.4s ease;
+}
+.section.active {
+  display:block;
+  opacity:1;
+}
+
+h2 {
+  font-size:2.4rem;
+  color:#00d4ff;
+  margin-bottom:1.5rem;
+  position:relative;
+}
+h2::after {
+  content:''; position:absolute; bottom:-6px; left:0;
+  width:70px; height:3px; background:#00d4ff;
+}
+
+.job, .edu-item, .skill-category, .project-item {
+  margin-bottom:35px;
+}
+.date-company { color:#888; font-size:0.95rem; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .main-layout { flex-direction:column; }
+  .sidebar {
+    width:100%;
+    padding:15px 0;
+    border-right:none;
+    border-bottom:1px solid #1e1e2f;
+    position:sticky;
+    top:0;
+    z-index:10;
+  }
+  .sidebar ul {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    padding:0 10px;
+  }
+  .sidebar a { padding:12px 8px; font-size:1rem; text-align:center; }
+  .content-area { padding:30px 20px; }
+}
