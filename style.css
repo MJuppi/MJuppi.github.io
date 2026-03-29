@@ -92,6 +92,15 @@ h2::after {
 }
 .date-company, .project-description { color:#888; font-size:0.95rem; }
 
+.footer {
+  text-align:center;
+  padding:20px;
+  background:#161622;
+  color:#888;
+  font-size:0.9rem;
+  border-top:1px solid #1e1e2f;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .main-layout { flex-direction:column; }
