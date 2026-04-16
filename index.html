@@ -11,7 +11,7 @@
   <header class="hero">
     <div class="container">
       <div class="profile-pic">
-        <img src="profile.jpg" alt="Markus Juppi">
+        <img src="img/profile.jpg" alt="Markus Juppi">
       </div>
       <h1>Markus Juppi</h1>
       <p class="tagline">Full-Stack Developer | 3D Modeling & local AI Enthusiast</p>
@@ -32,6 +32,7 @@
         <li><a href="#" data-target="education" class="nav-link">🎓 Education</a></li>
         <li><a href="#" data-target="skills" class="nav-link">🛠️ Skills</a></li>
         <li><a href="#" data-target="projects" class="nav-link">📁 Projects</a></li>
+        <li><a href="#" data-target="3d-modeling" class="nav-link">🎨 3D Modeling</a></li>
       </ul>
     </nav>
 
@@ -140,8 +141,55 @@
           <a href="https://youtu.be/GmSHyVg9ynU" target="_blank" class="project-link">→ YouTube Demo</a>
         </div>
       </div>
+      <!-- 3D Modeling -->
+      <div id="3d-modeling" class="section">
+        <h2>3D Modeling</h2>
+        <div class="modeling-item">
+          <h3>3D Model Examples</h3>
+          <p class="modeling-description">A collection of 3D models created using Blender, including architectural visualizations and game assets.</p>
+          <nav class="model-sidebar">
+            <ul>
+              <li><a href="#" model-target="model1" class="model-link active"></a></li>
+              <li><a href="#" model-target="model2" class="model-link"></a></li>
+              <li><a href="#" model-target="model3" class="model-link"></a></li>
+              <li><a href="#" model-target="model4" class="model-link"></a></li>
+              <li><a href="#" model-target="model5" class="model-link"></a></li>
+              <li><a href="#" model-target="model6" class="model-link"></a></li>
+            </ul>
+          </nav>
+          <div class="model-display">
+            <div id="model1" class="model active">
+              <img src="img/SuomiKP.png" alt="3D Model 1">
+              <p>Low-poly model of a Suomi Konepistooli submachine gun</p>
+            </div>
+            <div id="model2" class="model">
+              <video src="video/Pillow.mp4" controls width="100%" height="auto" preload="metadata">
+                Your browser does not support the video tag.
+              </video>
+              <p>Testing Blenders video rendering with a simple physics simulation.</p>
+            </div>
+            <div id="model3" class="model">
+              <img src="img/Anvil.png" alt="3D Model 3">
+              <p>Render of an anvil with simulated sparks.</p>
+            </div>
+            <div id="model4" class="model">
+              <img src="img/ChainFence.png" alt="3D Model 4">
+              <p>Chainlink fence model done with Blender.</p>
+            </div>
+            <div id="model5" class="model">
+              <img src="img/Chessboard.png" alt="3D Model 5">
+              <p>High-detail model of a chessboard.</p>
+            </div>
+            <div id="model6" class="model">
+              <img src="img/Staircase.jpg" alt="3D Model 6">
+              <p>Render of a modern staircase, part of my thesis work.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
   <footer class="footer">
     <p>© 2026 Markus Juppi • Built with HTML + CSS + JavaScript</p>
