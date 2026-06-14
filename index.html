@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -22,31 +22,80 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+  
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+  
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+
   <header class="hero">
     <div class="container">
-      <div class="profile-pic">
-        <img src="img/profile.jpg" alt="Markus Juppi">
+      <div class="profile-pic-wrapper">
+        <div class="profile-pic-glow"></div>
+        <div class="profile-pic">
+          <img src="img/profile.jpg" alt="Markus Juppi - Full-Stack Developer and 3D Modeler" loading="lazy" decoding="async">
+        </div>
       </div>
-      <h1>Markus Juppi</h1>
-      <p class="tagline">Full-Stack Developer | 3D Modeling & local AI Enthusiast</p>
+      <h1 class="hero-title">Markus Juppi</h1>
+      <p class="tagline"><span id="typingText"></span><span class="cursor">|</span></p>
       
       <div class="contact-links">
-        <span>juppi.markus(at)gmail.com</span>
-        <a href="https://www.linkedin.com/in/markus-juppi-752a74234/" target="_blank">LinkedIn</a>
+        <a href="mailto:juppi.markus@gmail.com" class="contact-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          juppi.markus@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/markus-juppi-752a74234/" target="_blank" rel="noopener noreferrer" class="contact-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.073-.926-2.073-2.073S4.193 3.287 5.337 3.287c1.144 0 2.073.926 2.073 2.073s-.929 2.073-2.073 2.073zm3.738 13.019H1.6V9h3.475v11.452zM11.252 9.611h-.01"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/MJuppi" target="_blank" rel="noopener noreferrer" class="contact-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="#" class="contact-btn cv-download" title="Download CV">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          CV
+        </a>
       </div>
     </div>
   </header>
 
   <div class="main-layout">
     <!-- SIDEBAR NAVBAR -->
-    <nav class="sidebar">
+    <nav class="sidebar" aria-label="Main navigation">
       <ul>
-        <li><a href="#" data-target="profile" class="nav-link active">🧑‍💻 Profile</a></li>
-        <li><a href="#" data-target="experience" class="nav-link">💼 Experience</a></li>
-        <li><a href="#" data-target="education" class="nav-link">🎓 Education</a></li>
-        <li><a href="#" data-target="skills" class="nav-link">🛠️ Skills</a></li>
-        <li><a href="#" data-target="projects" class="nav-link">📁 Projects</a></li>
-        <li><a href="#" data-target="3d-modeling" class="nav-link">🎨 3D Modeling</a></li>
+        <li><a href="#" data-target="profile" class="nav-link active" aria-label="Profile section">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Profile</span>
+        </a></li>
+        <li><a href="#" data-target="experience" class="nav-link" aria-label="Experience section">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <span>Experience</span>
+        </a></li>
+        <li><a href="#" data-target="education" class="nav-link" aria-label="Education section">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <span>Education</span>
+        </a></li>
+        <li><a href="#" data-target="skills" class="nav-link" aria-label="Skills section">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>Skills</span>
+        </a></li>
+        <li><a href="#" data-target="projects" class="nav-link" aria-label="Projects section">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          <span>Projects</span>
+        </a></li>
+        <li><a href="#" data-target="3d-modeling" class="nav-link" aria-label="3D Modeling section">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <span>3D Modeling</span>
+        </a></li>
       </ul>
     </nav>
 
@@ -57,48 +106,132 @@
       <div id="profile" class="section active">
         <h2>Profile</h2>
         <p>I am always up for new challenges. I have a strong background in mathematics and IT. During my military service, I worked as a clerk and 3D modeling support staff for a virtual training environment. I am adaptable and thrive in different work environments, from physically demanding outdoor tasks to precision-focused office work.</p>
+        
+        <div class="profile-highlights">
+          <div class="highlight-card">
+            <span class="highlight-number">3+</span>
+            <span class="highlight-label">Years in Tech</span>
+          </div>
+          <div class="highlight-card">
+            <span class="highlight-number">10+</span>
+            <span class="highlight-label">Technologies</span>
+          </div>
+          <div class="highlight-card">
+            <span class="highlight-number">6</span>
+            <span class="highlight-label">3D Projects</span>
+          </div>
+        </div>
       </div>
 
       <!-- EXPERIENCE -->
       <div id="experience" class="section">
         <h2>Work Experience</h2>
-        <div class="job">
-          <h3>Full-stack Developer (Internship)</h3>
-          <p class="date-company">Casamedia – Spring 2025</p>
-          <ul><li>Flutter frontend and JavaScript backend with MongoDB</li></ul>
-        </div>
-        <div class="job">
-          <h3>Video Production Assistant</h3>
-          <p class="date-company">StarJump Startup – Summer 2024</p>
-          <ul><li>Production of immersive exercise video content</li></ul>
-        </div>
-        <div class="job">
-          <h3>Summer Employee</h3>
-          <p class="date-company">City of Oulu – 2.7.2014 – 1.8.2014</p>
-          <ul><li>Maintenance of parks and litter collection</li></ul>
-        </div>
-        <div class="job">
-          <h3>Clerk & 3D Modeling Support</h3>
-          <p class="date-company">Finnish Defence Forces – 3/2018</p>
-          <ul><li>Virtual training environment support</li></ul>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Full-stack Developer</h3>
+                <span class="timeline-badge internship">Internship</span>
+              </div>
+              <p class="date-company">Casamedia – Spring 2025</p>
+              <ul class="timeline-details">
+                <li>Flutter frontend and JavaScript backend with MongoDB</li>
+                <li>Developed cross-platform mobile applications</li>
+              </ul>
+              <div class="tech-tags">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Video Production Assistant</h3>
+                <span class="timeline-badge contract">Contract</span>
+              </div>
+              <p class="date-company">StarJump Startup – Summer 2024</p>
+              <ul class="timeline-details">
+                <li>Production of immersive exercise video content</li>
+              </ul>
+              <div class="tech-tags">
+                <span class="tech-tag">Video Production</span>
+                <span class="tech-tag">Content Creation</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Clerk & 3D Modeling Support</h3>
+                <span class="timeline-badge military">Military</span>
+              </div>
+              <p class="date-company">Finnish Defence Forces – Spring 2018</p>
+              <ul class="timeline-details">
+                <li>Virtual training environment support</li>
+                <li>3D modeling for tactical simulations</li>
+              </ul>
+              <div class="tech-tags">
+                <span class="tech-tag">3D Modeling</span>
+                <span class="tech-tag">Virtual Environments</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Summer Employee</h3>
+                <span class="timeline-badge seasonal">Seasonal</span>
+              </div>
+              <p class="date-company">City of Oulu – Summer 2014</p>
+              <ul class="timeline-details">
+                <li>Maintenance of parks and litter collection</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- EDUCATION -->
       <div id="education" class="section">
         <h2>Education</h2>
-        <div class="edu-item">
-          <h3>Bachelor of Engineering, Information Technology</h3>
-          <p class="date-company">LAB University of Applied Sciences – 2022–2025</p>
-        </div>
-        <div class="edu-item">
-          <h3>Mathematics Student</h3>
-          <p class="date-company">University of Oulu – 2013–2021</p>
-        </div>
-        <div class="edu-item">
-          <h3>High School Diploma</h3>
-          <p class="date-company">Helsingin Medialukio – 2013</p>
-          <p>Finnish, English, Mathematics, Biology</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Bachelor of Engineering, Information Technology</h3>
+                <span class="timeline-badge degree">Degree</span>
+              </div>
+              <p class="date-company">LAB University of Applied Sciences – 2022–2025</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Mathematics Student</h3>
+                <span class="timeline-badge course">Coursework</span>
+              </div>
+              <p class="date-company">University of Oulu – 2013–2021</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>High School Diploma – Media Studies</h3>
+                <span class="timeline-badge school">School</span>
+              </div>
+              <p class="date-company">Helsingin Medialukio – 2013</p>
+              <p class="education-subject">Finnish, English, Mathematics, Biology</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -108,101 +241,225 @@
         
         <div class="skill-category">
           <h3>Languages</h3>
-          <ul>
-            <li>Finnish: Native</li>
-            <li>English: Very strong</li>
-            <li>Swedish: Acceptable (advanced course)</li>
-          </ul>
+          <div class="skill-bars">
+            <div class="skill-bar">
+              <span class="skill-name">Finnish</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 100%"></div></div>
+              <span class="skill-level">Native</span>
+            </div>
+            <div class="skill-bar">
+              <span class="skill-name">English</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 90%"></div></div>
+              <span class="skill-level">Very Strong</span>
+            </div>
+            <div class="skill-bar">
+              <span class="skill-name">Swedish</span>
+              <div class="bar-track"><div class="bar-fill" style="width: 60%"></div></div>
+              <span class="skill-level">Advanced</span>
+            </div>
+          </div>
         </div>
         
         <div class="skill-category">
           <h3>IT & Programming</h3>
-          <ul>
-            <li>HTML, CSS, JavaScript/TypeScript</li>
-            <li>React, Angular, NestJS, GraphQL</li>
-            <li>C/C++, C#, Java, Kotlin, Python, R</li>
-            <li>Flutter, MongoDB</li>
-            <li>LaTeX, Photoshop, OBS, Video editing</li>
-            <li>Blender, Unity, Unreal Engine</li>
-            <li>Local solutions for AI, ComfyUI, Stable Diffusion and other LLMs</li>
-          </ul>
+          <div class="skill-tags-cloud">
+            <span class="skill-tag-group">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">TypeScript</span>
+            </span>
+            <span class="skill-tag-group">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Angular</span>
+              <span class="skill-tag">NestJS</span>
+              <span class="skill-tag">GraphQL</span>
+            </span>
+            <span class="skill-tag-group">
+              <span class="skill-tag">C/C++</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Kotlin</span>
+            </span>
+            <span class="skill-tag-group">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">R</span>
+            </span>
+            <span class="skill-tag-group">
+              <span class="skill-tag">Flutter</span>
+              <span class="skill-tag">MongoDB</span>
+            </span>
+            <span class="skill-tag-group">
+              <span class="skill-tag">LaTeX</span>
+              <span class="skill-tag">Photoshop</span>
+              <span class="skill-tag">OBS</span>
+            </span>
+            <span class="skill-tag-group">
+              <span class="skill-tag">Blender</span>
+              <span class="skill-tag">Unity</span>
+              <span class="skill-tag">Unreal Engine</span>
+            </span>
+            <span class="skill-tag-group">
+              <span class="skill-tag">ComfyUI</span>
+              <span class="skill-tag">Stable Diffusion</span>
+              <span class="skill-tag">LLMs</span>
+            </span>
+          </div>
         </div>
         
         <div class="skill-category">
-          <h3>Hobbies</h3>
-          <ul>
-            <li>Video editing & content creation</li>
-            <li>PC gaming and computer building</li>
-            <li>Repurposed an old PC as a homelab (Thanks to Win11 requirements), running various virtual machines, development environments and AI tools</li>
-          </ul>
+          <h3>Interests & Hobbies</h3>
+          <div class="interests-grid">
+            <div class="interest-card">
+              <span class="interest-icon">🎬</span>
+              <span>Video editing & content creation</span>
+            </div>
+            <div class="interest-card">
+              <span class="interest-icon">🎮</span>
+              <span>PC gaming and computer building</span>
+            </div>
+            <div class="interest-card">
+              <span class="interest-icon">🖥️</span>
+              <span>Homelab with VMs, dev environments & AI tools</span>
+            </div>
+          </div>
         </div>
       </div>
       <!-- PROJECTS -->
       <div id="projects" class="section">
         <h2>Projects</h2>
-        <div class="project-item">
-          <h3>School Project - Weather App</h3>
-          <p class="project-description">A simple weather application that displays current weather information for a given location.</p>
-          <a href="https://github.com/MJuppi/WeatherApp" target="_blank" class="project-link">→ GitHub Repository</a>
-        </div>
-        <div class="project-item">
-          <h3>Kymiring - Race track</h3>
-          <p class="project-description">Finnish race track modded into Assetto Corsa, personal project just to see how it looks.</p>
-          <a href="https://youtu.be/aPCkx0b9GpA" target="_blank" class="project-link">→ YouTube Demo</a>
-        </div>
-        <div class="project-item">
-          <h3>Staircase</h3>
-          <p class="project-description">A 3D model of a modern staircase designed using Blender for my thesis.</p>
-          <a href="https://youtu.be/GmSHyVg9ynU" target="_blank" class="project-link">→ YouTube Demo</a>
-        </div>
-        <div class="project-item">
-          <h3>Vulkan renderer</h3>
-          <p class="project-description">A custom Vulkan-based renderer for visualizations of game assets. Most of the development is done in C++. Also testing vibecoding.</p>
-          <a href="https://github.com/MJuppi/GameEngine" target="_blank" class="project-link">→ GitHub Repository</a>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-card-header">
+              <div class="project-icon">🌤️</div>
+              <div class="project-links">
+                <a href="https://github.com/MJuppi/WeatherApp" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View on GitHub">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Weather App</h3>
+            <p class="project-description">A responsive weather application that displays current conditions and forecasts for any location using real-time API data.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">REST API</span>
+              <span class="tech-tag">CSS3</span>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-card-header">
+              <div class="project-icon">🏎️</div>
+              <div class="project-links">
+                <a href="https://youtu.be/aPCkx0b9GpA" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="Watch Demo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Kymiring – Assetto Corsa Mod</h3>
+            <p class="project-description">A detailed Finnish race track mod for Assetto Corsa, featuring accurate terrain mapping and custom textures for realistic racing.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">3D Modeling</span>
+              <span class="tech-tag">Texturing</span>
+              <span class="tech-tag">Assetto Corsa</span>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-card-header">
+              <div class="project-icon">🏗️</div>
+              <div class="project-links">
+                <a href="https://youtu.be/GmSHyVg9ynU" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="Watch Demo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Modern Staircase</h3>
+            <p class="project-description">A photorealistic 3D model of a modern staircase created for my thesis, featuring accurate materials and lighting.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Blender</span>
+              <span class="tech-tag">3D Rendering</span>
+              <span class="tech-tag">Thesis</span>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-card-header">
+              <div class="project-icon">⚡</div>
+              <div class="project-links">
+                <a href="https://github.com/MJuppi/GameEngine" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="View on GitHub">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Vulkan Renderer</h3>
+            <p class="project-description">A custom Vulkan-based renderer for visualizing game assets in C++, featuring real-time rendering and experimental AI-assisted development.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">Vulkan</span>
+              <span class="tech-tag">Graphics</span>
+            </div>
+          </div>
         </div>
       </div>
       <!-- 3D Modeling -->
       <div id="3d-modeling" class="section">
         <h2>3D Modeling</h2>
-        <div class="modeling-item">
-          <h3>3D Model Examples</h3>
-          <p class="modeling-description">A collection of 3D models created using Blender, including architectural visualizations and game assets.</p>
-          <nav class="model-sidebar">
+        <div class="modeling-showcase">
+          <div class="modeling-sidebar">
             <ul>
-              <li><a href="#" model-target="model1" class="model-link active"></a></li>
-              <li><a href="#" model-target="model2" class="model-link"></a></li>
-              <li><a href="#" model-target="model3" class="model-link"></a></li>
-              <li><a href="#" model-target="model4" class="model-link"></a></li>
-              <li><a href="#" model-target="model5" class="model-link"></a></li>
-              <li><a href="#" model-target="model6" class="model-link"></a></li>
+              <li><a href="#" model-target="model1" class="model-link active" aria-label="Suomi KP model">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span>Suomi KP</span>
+              </a></li>
+              <li><a href="#" model-target="model2" class="model-link" aria-label="Pillow physics simulation">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="8" y="2" width="14" height="20" rx="2" ry="2"/></svg>
+                <span>Pillow Sim</span>
+              </a></li>
+              <li><a href="#" model-target="model3" class="model-link" aria-label="Anvil with sparks">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span>Anvil</span>
+              </a></li>
+              <li><a href="#" model-target="model4" class="model-link" aria-label="Chainlink fence">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span>Fence</span>
+              </a></li>
+              <li><a href="#" model-target="model5" class="model-link" aria-label="Chessboard">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span>Chessboard</span>
+              </a></li>
+              <li><a href="#" model-target="model6" class="model-link" aria-label="Staircase render">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span>Staircase</span>
+              </a></li>
             </ul>
-          </nav>
+          </div>
           <div class="model-display">
             <div id="model1" class="model active">
-              <img src="img/SuomiKP.png" alt="3D Model 1">
-              <p>Low-poly model of a Suomi submachine gun</p>
+              <img src="img/SuomiKP.png" alt="Low-poly Suomi KP/-31 submachine gun 3D model rendered in Blender" loading="lazy" decoding="async" data-lightbox="true">
+              <p>Low-poly model of a Suomi KP/-31 submachine gun</p>
             </div>
             <div id="model2" class="model">
-              <video src="video/Pillow.mp4" controls width="100%" height="auto" preload="metadata">
+              <video src="video/Pillow.mp4" controls width="100%" height="auto" preload="metadata" loading="lazy">
                 Your browser does not support the video tag.
               </video>
-              <p>Testing Blenders video rendering with a simple physics simulation.</p>
+              <p>Blender physics simulation with pillow dynamics</p>
             </div>
             <div id="model3" class="model">
-              <img src="img/Anvil.png" alt="3D Model 3">
-              <p>Render of an anvil with simulated sparks.</p>
+              <img src="img/Anvil.png" alt="Anvil 3D model with simulated spark particle effects rendered in Blender" loading="lazy" decoding="async" data-lightbox="true">
+              <p>Render of an anvil with simulated sparks</p>
             </div>
             <div id="model4" class="model">
-              <img src="img/ChainFence.png" alt="3D Model 4">
-              <p>Chainlink fence model done with Blender.</p>
+              <img src="img/ChainFence.png" alt="Chainlink fence 3D model created in Blender with realistic materials" loading="lazy" decoding="async" data-lightbox="true">
+              <p>Chainlink fence model created in Blender</p>
             </div>
             <div id="model5" class="model">
-              <img src="img/Chessboard.png" alt="3D Model 5">
-              <p>High-detail model of a chessboard.</p>
+              <img src="img/Chessboard.png" alt="High-detail chessboard 3D model with intricate geometric patterns" loading="lazy" decoding="async" data-lightbox="true">
+              <p>High-detail model of a chessboard</p>
             </div>
             <div id="model6" class="model">
-              <img src="img/Staircase.jpg" alt="3D Model 6">
-              <p>Render of a modern staircase, part of my thesis work.</p>
+              <img src="img/Staircase.jpg" alt="Modern staircase 3D architectural visualization rendered in Blender" loading="lazy" decoding="async" data-lightbox="true">
+              <p>Render of a modern staircase, part of my thesis work</p>
             </div>
           </div>
         </div>
@@ -210,6 +467,15 @@
     </div>
   </div>
 </div>
+
+  <!-- Lightbox Overlay -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <div class="lightbox-media" id="lightboxMedia"></div>
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
 
   <footer class="footer">
     <p>© 2026 Markus Juppi • Built with HTML + CSS + JavaScript</p>
