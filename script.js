@@ -1,60 +1,79 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // ===== NAVIGATION =====
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('.section');
-  const modelLinks = document.querySelectorAll('.model-link');
-  const models = document.querySelectorAll('.model');
+  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll(".section");
+  const modelLinks = document.querySelectorAll(".model-link");
+  const models = document.querySelectorAll(".model");
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
 
       // Remove active from all links
-      navLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
+      navLinks.forEach((l) => l.classList.remove("active"));
+      link.classList.add("active");
 
       // Hide all sections
-      sections.forEach(sec => sec.classList.remove('active'));
+      sections.forEach((sec) => sec.classList.remove("active"));
 
       // Show the target section
-      const targetId = link.getAttribute('data-target');
+      const targetId = link.getAttribute("data-target");
       const targetSection = document.getElementById(targetId);
       if (targetSection) {
-        targetSection.classList.add('active');
+        targetSection.classList.add("active");
       }
     });
   });
 
-  modelLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+  modelLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
 
       // Remove active from all model links
-      modelLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
+      modelLinks.forEach((l) => l.classList.remove("active"));
+      link.classList.add("active");
 
       // Hide all models
-      models.forEach(model => model.classList.remove('active'));
+      models.forEach((model) => model.classList.remove("active"));
 
       // Show the target model
-      const targetId = link.getAttribute('model-target');
+      const targetId = link.getAttribute("model-target");
       const targetModel = document.getElementById(targetId);
       if (targetModel) {
-        targetModel.classList.add('active');
+        targetModel.classList.add("active");
       }
     });
   });
 
+  // ===== SNOWFALL =====
+  const snowfallContainer = document.getElementById("snowfall");
+  const snowflakeChars = ["❄", "•", "◦"];
+  const snowflakeCount = 40;
+
+  for (let i = 0; i < snowflakeCount; i++) {
+    const flake = document.createElement("span");
+    flake.classList.add("snowflake");
+    flake.textContent =
+      snowflakeChars[Math.floor(Math.random() * snowflakeChars.length)];
+    flake.style.left = Math.random() * 100 + "%";
+    flake.style.fontSize = Math.random() * 8 + 8 + "px";
+    flake.style.animationDuration = Math.random() * 15 + 20 + "s";
+    flake.style.animationDelay = Math.random() * -30 + "s";
+    flake.style.setProperty("--drift", Math.random() * 80 - 40 + "px");
+    flake.style.opacity = Math.random() * 0.3 + 0.2;
+    snowfallContainer.appendChild(flake);
+  }
+
   // Show Profile by default
-  document.getElementById('profile').classList.add('active');
+  document.getElementById("profile").classList.add("active");
 
   // ===== TYPING ANIMATION =====
-  const typingText = document.getElementById('typingText');
+  const typingText = document.getElementById("typingText");
   const phrases = [
-    'Full-Stack Developer',
-    '3D Modeling Enthusiast',
-    'Local AI Explorer',
-    'Creative Problem Solver'
+    "Full-Stack Developer",
+    "3D Modeling Enthusiast",
+    "Local AI Explorer",
+    "Creative Problem Solver",
   ];
   let phraseIndex = 0;
   let charIndex = 0;
@@ -63,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function type() {
     const currentPhrase = phrases[phraseIndex];
-    
+
     if (isDeleting) {
       typingText.textContent = currentPhrase.substring(0, charIndex - 1);
       charIndex--;
@@ -88,108 +107,111 @@ document.addEventListener('DOMContentLoaded', () => {
   type();
 
   // ===== SCROLL PROGRESS =====
-  const scrollProgress = document.getElementById('scrollProgress');
-  window.addEventListener('scroll', () => {
+  const scrollProgress = document.getElementById("scrollProgress");
+  window.addEventListener("scroll", () => {
     const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
     const scrollPercent = (scrollTop / docHeight) * 100;
-    scrollProgress.style.width = scrollPercent + '%';
+    scrollProgress.style.width = scrollPercent + "%";
   });
 
   // ===== BACK TO TOP =====
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
+  const backToTop = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
-      backToTop.classList.add('visible');
+      backToTop.classList.add("visible");
     } else {
-      backToTop.classList.remove('visible');
+      backToTop.classList.remove("visible");
     }
   });
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   // ===== THEME TOGGLE =====
-  const themeToggle = document.getElementById('themeToggle');
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', savedTheme);
+  const themeToggle = document.getElementById("themeToggle");
+  const savedTheme = localStorage.getItem("theme") || "dark";
+  document.documentElement.setAttribute("data-theme", savedTheme);
 
-  themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
   });
 
   // ===== LIGHTBOX =====
-  const lightbox = document.getElementById('lightbox');
-  const lightboxClose = document.getElementById('lightboxClose');
-  const lightboxMedia = document.getElementById('lightboxMedia');
-  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightbox = document.getElementById("lightbox");
+  const lightboxClose = document.getElementById("lightboxClose");
+  const lightboxMedia = document.getElementById("lightboxMedia");
+  const lightboxCaption = document.getElementById("lightboxCaption");
 
   // Add click handlers to images with data-lightbox
-  document.querySelectorAll('[data-lightbox="true"]').forEach(img => {
-    img.addEventListener('click', (e) => {
+  document.querySelectorAll('[data-lightbox="true"]').forEach((img) => {
+    img.addEventListener("click", (e) => {
       e.stopPropagation();
       const src = img.src;
       const alt = img.alt;
       lightboxMedia.innerHTML = `<img src="${src}" alt="${alt}">`;
       lightboxCaption.textContent = alt;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden";
     });
   });
 
-  lightboxClose.addEventListener('click', (e) => {
+  lightboxClose.addEventListener("click", (e) => {
     e.stopPropagation();
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
   });
 
-  lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
+  lightbox.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
   });
 
   // Close with Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("active")) {
+      lightbox.classList.remove("active");
+      document.body.style.overflow = "";
     }
   });
 
   // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: "0px 0px -50px 0px",
   };
 
   const animationObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
       }
     });
   }, observerOptions);
 
   // Observe timeline items, project cards, and highlight cards
-  document.querySelectorAll('.timeline-item, .project-card, .highlight-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    animationObserver.observe(el);
-  });
+  document
+    .querySelectorAll(".timeline-item, .project-card, .highlight-card")
+    .forEach((el) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(20px)";
+      el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+      animationObserver.observe(el);
+    });
 
   // Stagger the animations
-  document.querySelectorAll('.timeline-item').forEach((item, index) => {
+  document.querySelectorAll(".timeline-item").forEach((item, index) => {
     item.style.transitionDelay = `${index * 0.1}s`;
   });
-  document.querySelectorAll('.project-card').forEach((card, index) => {
+  document.querySelectorAll(".project-card").forEach((card, index) => {
     card.style.transitionDelay = `${index * 0.1}s`;
   });
-  document.querySelectorAll('.highlight-card').forEach((card, index) => {
+  document.querySelectorAll(".highlight-card").forEach((card, index) => {
     card.style.transitionDelay = `${index * 0.15}s`;
   });
 });
