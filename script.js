@@ -9,8 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // Remove active from all links
-      navLinks.forEach((l) => l.classList.remove("active"));
+      // Remove active from all links and mark the current one for screen readers
+      navLinks.forEach((l) => {
+        l.classList.remove("active");
+        if (l === link) {
+          l.setAttribute("aria-current", "page");
+        } else {
+          l.removeAttribute("aria-current");
+        }
+      });
       link.classList.add("active");
 
       // Hide all sections
@@ -29,8 +36,15 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // Remove active from all model links
-      modelLinks.forEach((l) => l.classList.remove("active"));
+      // Remove active from all model links and mark the current one for screen readers
+      modelLinks.forEach((l) => {
+        l.classList.remove("active");
+        if (l === link) {
+          l.setAttribute("aria-current", "page");
+        } else {
+          l.removeAttribute("aria-current");
+        }
+      });
       link.classList.add("active");
 
       // Hide all models
@@ -45,10 +59,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ===== SNOWFALL =====
+  // ===== KEYBOARD NAVIGATION FOR SIDEBAR TABS =====
+  function enableArrowNavigation(listEl) {
+    const links = Array.from(listEl.querySelectorAll("a"));
+    listEl.addEventListener("keydown", (e) => {
+      let nextIndex;
+      const current = links.indexOf(document.activeElement);
+      if (e.key === "ArrowDown") {
+        nextIndex = current < 0 ? 0 : (current + 1) % links.length;
+      } else if (e.key === "ArrowUp") {
+        nextIndex =
+          current < 0
+            ? links.length - 1
+            : (current - 1 + links.length) % links.length;
+      } else if (e.key === "Home") {
+        nextIndex = 0;
+      } else if (e.key === "End") {
+        nextIndex = links.length - 1;
+      } else {
+        return;
+      }
+      e.preventDefault();
+      links[nextIndex].focus();
+    });
+  }
+
+  document
+    .querySelectorAll(".sidebar ul, .modeling-sidebar ul")
+    .forEach(enableArrowNavigation);
+
+  // ===== SNOWFALL (skipped for reduced-motion users) =====
   const snowfallContainer = document.getElementById("snowfall");
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
   const snowflakeChars = ["❄", "•", "◦"];
-  const snowflakeCount = 40;
+  const snowflakeCount = prefersReducedMotion ? 0 : 40;
 
   for (let i = 0; i < snowflakeCount; i++) {
     const flake = document.createElement("span");
@@ -129,14 +175,24 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  // ===== THEME TOGGLE =====
+  // ===== THEME TOGGLE (saved choice wins, else OS preference) =====
   const themeToggle = document.getElementById("themeToggle");
-  const savedTheme = localStorage.getItem("theme") || "dark";
-  document.documentElement.setAttribute("data-theme", savedTheme);
+  const prefersDark = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+
+  function resolvedTheme() {
+    return localStorage.getItem("theme") || (prefersDark ? "dark" : "light");
+  }
+
+  // The inline head script already applied this before first paint
+  document.documentElement.setAttribute("data-theme", resolvedTheme());
 
   themeToggle.addEventListener("click", () => {
-    const currentTheme = document.documentElement.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    const newTheme =
+      document.documentElement.getAttribute("data-theme") === "dark"
+        ? "light"
+        : "dark";
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
   });
