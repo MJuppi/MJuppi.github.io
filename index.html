@@ -55,6 +55,10 @@
     <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
   </button>
 
+  <button class="language-toggle" id="languageToggle" type="button" aria-label="Toggle language" title="Switch language">
+    FI / EN
+  </button>
+
   <header class="hero">
     <div class="container">
       <div class="profile-pic-wrapper">
@@ -91,29 +95,29 @@
     <!-- SIDEBAR NAVBAR -->
     <nav class="sidebar" aria-label="Main navigation">
       <ul>
-        <li><a href="#" data-target="profile" class="nav-link active" aria-current="page" aria-label="Profile section">
+        <li><a href="#" data-target="profile" class="nav-link active" aria-current="page" aria-label="Profile section" data-i18n-aria="nav.profileAria">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          <span>Profile</span>
+          <span data-i18n="nav.profile">Profile</span>
         </a></li>
-        <li><a href="#" data-target="experience" class="nav-link" aria-label="Experience section">
+        <li><a href="#" data-target="experience" class="nav-link" aria-label="Experience section" data-i18n-aria="nav.experienceAria">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          <span>Experience</span>
+          <span data-i18n="nav.experience">Experience</span>
         </a></li>
-        <li><a href="#" data-target="education" class="nav-link" aria-label="Education section">
+        <li><a href="#" data-target="education" class="nav-link" aria-label="Education section" data-i18n-aria="nav.educationAria">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          <span>Education</span>
+          <span data-i18n="nav.education">Education</span>
         </a></li>
-        <li><a href="#" data-target="skills" class="nav-link" aria-label="Skills section">
+        <li><a href="#" data-target="skills" class="nav-link" aria-label="Skills section" data-i18n-aria="nav.skillsAria">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <span>Skills</span>
+          <span data-i18n="nav.skills">Skills</span>
         </a></li>
-        <li><a href="#" data-target="projects" class="nav-link" aria-label="Projects section">
+        <li><a href="#" data-target="projects" class="nav-link" aria-label="Projects section" data-i18n-aria="nav.projectsAria">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-          <span>Projects</span>
+          <span data-i18n="nav.projects">Projects</span>
         </a></li>
-        <li><a href="#" data-target="3d-modeling" class="nav-link" aria-label="3D Modeling section">
+        <li><a href="#" data-target="3d-modeling" class="nav-link" aria-label="3D Modeling section" data-i18n-aria="nav.modelingAria">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          <span>3D Modeling</span>
+          <span data-i18n="nav.modeling">3D Modeling</span>
         </a></li>
       </ul>
     </nav>
@@ -123,44 +127,44 @@
 
       <!-- PROFILE -->
       <div id="profile" class="section active">
-        <h2>Profile</h2>
-        <p class="profile-role">Full-Stack Developer &amp; 3D Artist</p>
+        <h2 data-i18n="section.profile">Profile</h2>
+        <p class="profile-role" data-i18n="profile.role">Full-Stack Developer &amp; 3D Artist</p>
         <div class="profile-intro">
-          <p>I am a recently graduated Information Technology engineer with a strong foundation in mathematics and a unique combination of software development and 3D graphics skills. With hands-on experience building cross-platform mobile applications (Flutter, JavaScript, MongoDB) and creating high-quality 3D assets and real-time visuals in Blender and Unreal Engine, I bridge the gap between code and creative production.</p>
-          <p>My background includes full-stack development internships, video production for immersive content, and 3D modeling support for virtual training environments during military service. I thrive in both structured technical roles and creative problem-solving environments, and I'm always eager to take on new challenges—whether it's developing robust applications, optimizing 3D pipelines, or exploring graphics programming with tools like Vulkan and C++.</p>
+          <p data-i18n="profile.description1">I am a recently graduated Information Technology engineer with a strong foundation in mathematics and a unique combination of software development and 3D graphics skills. With hands-on experience building cross-platform mobile applications (Flutter, JavaScript, MongoDB) and creating high-quality 3D assets and real-time visuals in Blender and Unreal Engine, I bridge the gap between code and creative production.</p>
+          <p data-i18n="profile.description2">My background includes full-stack development internships, video production for immersive content, and 3D modeling support for virtual training environments during military service. I thrive in both structured technical roles and creative problem-solving environments, and I'm always eager to take on new challenges—whether it's developing robust applications, optimizing 3D pipelines, or exploring graphics programming with tools like Vulkan and C++.</p>
         </div>
 
         <div class="profile-highlights">
           <div class="highlight-card">
             <span class="highlight-number">3+</span>
-            <span class="highlight-label">Years in Tech</span>
+            <span class="highlight-label" data-i18n="profile.highlight1">Years in Tech</span>
           </div>
           <div class="highlight-card">
             <span class="highlight-number">10+</span>
-            <span class="highlight-label">Technologies</span>
+            <span class="highlight-label" data-i18n="profile.highlight2">Technologies</span>
           </div>
           <div class="highlight-card">
             <span class="highlight-number">6</span>
-            <span class="highlight-label">3D Projects</span>
+            <span class="highlight-label" data-i18n="profile.highlight3">3D Projects</span>
           </div>
         </div>
       </div>
 
       <!-- EXPERIENCE -->
       <div id="experience" class="section">
-        <h2>Work Experience</h2>
+        <h2 data-i18n="section.experience">Work Experience</h2>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-header">
-                <h3>Full-stack Developer</h3>
-                <span class="timeline-badge internship">Internship</span>
+                <h3 data-i18n="experience.role1">Full-stack Developer</h3>
+                <span class="timeline-badge internship" data-i18n="experience.badge1">Internship</span>
               </div>
-              <p class="date-company">Casamedia – Spring 2025</p>
+              <p class="date-company" data-i18n="experience.company1">Casamedia – Spring 2025</p>
               <ul class="timeline-details">
-                <li>Flutter frontend and JavaScript backend with MongoDB</li>
-                <li>Developed cross-platform mobile applications</li>
+                <li data-i18n="experience.detail1a">Flutter frontend and JavaScript backend with MongoDB</li>
+                <li data-i18n="experience.detail1b">Developed cross-platform mobile applications</li>
               </ul>
               <div class="tech-tags">
                 <span class="tech-tag">Flutter</span>
@@ -173,12 +177,12 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-header">
-                <h3>Video Production Assistant</h3>
-                <span class="timeline-badge contract">Internship</span>
+                <h3 data-i18n="experience.role2">Video Production Assistant</h3>
+                <span class="timeline-badge contract" data-i18n="experience.badge2">Internship</span>
               </div>
-              <p class="date-company">StarJump Startup – Summer 2024</p>
+              <p class="date-company" data-i18n="experience.company2">StarJump Startup – Summer 2024</p>
               <ul class="timeline-details">
-                <li>Production of immersive exercise video content</li>
+                <li data-i18n="experience.detail2">Production of immersive exercise video content</li>
               </ul>
               <div class="tech-tags">
                 <span class="tech-tag">Video Production</span>
@@ -192,13 +196,13 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-header">
-                <h3>Clerk & 3D Modeling Support</h3>
-                <span class="timeline-badge military">Military</span>
+                <h3 data-i18n="experience.role3">Clerk &amp; 3D Modeling Support</h3>
+                <span class="timeline-badge military" data-i18n="experience.badge3">Military</span>
               </div>
-              <p class="date-company">Finnish Defence Forces – Spring 2018</p>
+              <p class="date-company" data-i18n="experience.company3">Finnish Defence Forces – Spring 2018</p>
               <ul class="timeline-details">
-                <li>Virtual training environment support</li>
-                <li>3D modeling for tactical simulations</li>
+                <li data-i18n="experience.detail3a">Virtual training environment support</li>
+                <li data-i18n="experience.detail3b">3D modeling for tactical simulations</li>
               </ul>
               <div class="tech-tags">
                 <span class="tech-tag">3D Modeling</span>
@@ -211,12 +215,12 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-header">
-                <h3>Summer Employee</h3>
-                <span class="timeline-badge seasonal">Seasonal</span>
+                <h3 data-i18n="experience.role4">Summer Employee</h3>
+                <span class="timeline-badge seasonal" data-i18n="experience.badge4">Seasonal</span>
               </div>
-              <p class="date-company">City of Oulu – Summer 2014</p>
+              <p class="date-company" data-i18n="experience.company4">City of Oulu – Summer 2014</p>
               <ul class="timeline-details">
-                <li>Maintenance of parks and litter collection</li>
+                <li data-i18n="experience.detail4">Maintenance of parks and litter collection</li>
               </ul>
             </div>
           </div>
@@ -225,37 +229,37 @@
 
       <!-- EDUCATION -->
       <div id="education" class="section">
-        <h2>Education</h2>
+        <h2 data-i18n="section.education">Education</h2>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-header">
-                <h3>Bachelor of Engineering, Information Technology</h3>
-                <span class="timeline-badge degree">Degree</span>
+                <h3 data-i18n="education.degree1">Bachelor of Engineering, Information Technology</h3>
+                <span class="timeline-badge degree" data-i18n="education.badge1">Degree</span>
               </div>
-              <p class="date-company">LAB University of Applied Sciences – 2022–2025</p>
+              <p class="date-company" data-i18n="education.company1">LAB University of Applied Sciences – 2022–2025</p>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-header">
-                <h3>Mathematics Student</h3>
-                <span class="timeline-badge course">Coursework</span>
+                <h3 data-i18n="education.degree2">Mathematics Student</h3>
+                <span class="timeline-badge course" data-i18n="education.badge2">Coursework</span>
               </div>
-              <p class="date-company">University of Oulu – 2013–2021</p>
+              <p class="date-company" data-i18n="education.company2">University of Oulu – 2013–2021</p>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <div class="timeline-header">
-                <h3>High School Diploma – Media Studies</h3>
-                <span class="timeline-badge school">School</span>
+                <h3 data-i18n="education.degree3">High School Diploma – Media Studies</h3>
+                <span class="timeline-badge school" data-i18n="education.badge3">School</span>
               </div>
-              <p class="date-company">Helsingin Medialukio – 2013</p>
-              <p class="education-subject">Finnish, English, Mathematics, Biology</p>
+              <p class="date-company" data-i18n="education.company3">Helsingin Medialukio – 2013</p>
+              <p class="education-subject" data-i18n="education.subject">Finnish, English, Mathematics, Biology</p>
             </div>
           </div>
         </div>
@@ -263,31 +267,31 @@
 
       <!-- SKILLS -->
       <div id="skills" class="section">
-        <h2>Skills</h2>
+        <h2 data-i18n="section.skills">Skills</h2>
 
         <div class="skill-category">
-          <h3 class="skill-category-title">Languages</h3>
+          <h3 class="skill-category-title" data-i18n="skills.languages">Languages</h3>
           <div class="skill-bars">
             <div class="skill-bar">
               <span class="skill-name">Finnish</span>
               <div class="bar-track"><div class="bar-fill" style="width: 100%"></div></div>
-              <span class="skill-level">Native</span>
+              <span class="skill-level" data-i18n="skills.finnish">Native</span>
             </div>
             <div class="skill-bar">
               <span class="skill-name">English</span>
               <div class="bar-track"><div class="bar-fill" style="width: 90%"></div></div>
-              <span class="skill-level">Very Strong</span>
+              <span class="skill-level" data-i18n="skills.english">Very Strong</span>
             </div>
             <div class="skill-bar">
               <span class="skill-name">Swedish</span>
               <div class="bar-track"><div class="bar-fill" style="width: 60%"></div></div>
-              <span class="skill-level">Advanced</span>
+              <span class="skill-level" data-i18n="skills.swedish">Advanced</span>
             </div>
           </div>
         </div>
 
         <div class="skill-category">
-          <h3 class="skill-category-title">IT & Programming</h3>
+          <h3 class="skill-category-title" data-i18n="skills.it">IT &amp; Programming</h3>
           <div class="skill-tags-cloud">
             <span class="skill-tag-group">
               <span class="skill-tag">HTML</span>
@@ -335,26 +339,26 @@
         </div>
 
         <div class="skill-category">
-          <h3 class="skill-category-title">Interests & Hobbies</h3>
+          <h3 class="skill-category-title" data-i18n="skills.interests">Interests &amp; Hobbies</h3>
           <div class="interests-grid">
             <div class="interest-card">
               <span class="interest-icon">🎬</span>
-              <span>Video editing & content creation</span>
+              <span data-i18n="skills.interest1">Video editing &amp; content creation</span>
             </div>
             <div class="interest-card">
               <span class="interest-icon">🎮</span>
-              <span>PC gaming and computer building</span>
+              <span data-i18n="skills.interest2">PC gaming and computer building</span>
             </div>
             <div class="interest-card">
               <span class="interest-icon">🖥️</span>
-              <span>Homelab with VMs, dev environments & AI tools</span>
+              <span data-i18n="skills.interest3">Homelab with VMs, dev environments &amp; AI tools</span>
             </div>
           </div>
         </div>
       </div>
       <!-- PROJECTS -->
       <div id="projects" class="section">
-        <h2>Projects</h2>
+        <h2 data-i18n="section.projects">Projects</h2>
         <div class="projects-grid">
           <div class="project-card">
             <div class="project-card-header">
@@ -365,8 +369,8 @@
                 </a>
               </div>
             </div>
-            <h3>Weather App</h3>
-            <p class="project-description">A responsive weather application that displays current conditions and forecasts for any location using real-time API data.</p>
+            <h3 data-i18n="project.weatherTitle">Weather App</h3>
+            <p class="project-description" data-i18n="project.weatherDesc">A responsive weather application that displays current conditions and forecasts for any location using real-time API data.</p>
             <div class="tech-tags">
               <span class="tech-tag">Kotlin</span>
               <span class="tech-tag">REST API</span>
@@ -383,8 +387,8 @@
                 </a>
               </div>
             </div>
-            <h3>Kymiring – Assetto Corsa Mod</h3>
-            <p class="project-description">A detailed Finnish race track mod for Assetto Corsa, featuring accurate terrain mapping and custom textures for realistic racing.</p>
+            <h3 data-i18n="project.kymiringTitle">Kymiring – Assetto Corsa Mod</h3>
+            <p class="project-description" data-i18n="project.kymiringDesc">A detailed Finnish race track mod for Assetto Corsa, featuring accurate terrain mapping and custom textures for realistic racing.</p>
             <div class="tech-tags">
               <span class="tech-tag">Blender</span>
               <span class="tech-tag">Texturing</span>
@@ -401,8 +405,8 @@
                 </a>
               </div>
             </div>
-            <h3>Modern Staircase</h3>
-            <p class="project-description">A photorealistic 3D model of a modern staircase created for my thesis, featuring accurate materials and lighting.</p>
+            <h3 data-i18n="project.staircaseTitle">Modern Staircase</h3>
+            <p class="project-description" data-i18n="project.staircaseDesc">A photorealistic 3D model of a modern staircase created for my thesis, featuring accurate materials and lighting.</p>
             <div class="tech-tags">
               <span class="tech-tag">Blender</span>
               <span class="tech-tag">3D Rendering</span>
@@ -419,8 +423,8 @@
                 </a>
               </div>
             </div>
-            <h3>Vulkan Renderer</h3>
-            <p class="project-description">A custom Vulkan-based renderer for visualizing game assets in C++, featuring real-time rendering and experimental AI-assisted development.</p>
+            <h3 data-i18n="project.vulkanTitle">Vulkan Renderer</h3>
+            <p class="project-description" data-i18n="project.vulkanDesc">A custom Vulkan-based renderer for visualizing game assets in C++, featuring real-time rendering and experimental AI-assisted development.</p>
             <div class="tech-tags">
               <span class="tech-tag">C++</span>
               <span class="tech-tag">Vulkan</span>
@@ -436,8 +440,8 @@
                 </a>
               </div>
             </div>
-            <h3>Password Manager</h3>
-            <p class="project-description">Vite-based password manager with a modern, responsive UI.</p>
+            <h3 data-i18n="project.passwordTitle">Password Manager</h3>
+            <p class="project-description" data-i18n="project.passwordDesc">Vite-based password manager with a modern, responsive UI.</p>
             <div class="tech-tags">
               <span class="tech-tag">Vite</span>
               <span class="tech-tag">React</span>
@@ -448,31 +452,31 @@
       </div>
       <!-- 3D Modeling -->
       <div id="3d-modeling" class="section">
-        <h2>3D Modeling</h2>
+        <h2 data-i18n="section.modeling">3D Modeling</h2>
         <div class="modeling-showcase">
           <div class="modeling-sidebar">
             <ul>
-              <li><a href="#" model-target="model1" class="model-link active" aria-current="page" aria-label="Suomi KP model">
+              <li><a href="#" model-target="model1" class="model-link active" aria-current="page" aria-label="Suomi KP model" data-i18n-aria="modeling.model1Aria">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                 <span>Suomi KP</span>
               </a></li>
-              <li><a href="#" model-target="model2" class="model-link" aria-label="Pillow physics simulation">
+              <li><a href="#" model-target="model2" class="model-link" aria-label="Pillow physics simulation" data-i18n-aria="modeling.model2Aria">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="8" y="2" width="14" height="20" rx="2" ry="2"/></svg>
                 <span>Pillow Sim</span>
               </a></li>
-              <li><a href="#" model-target="model3" class="model-link" aria-label="Anvil with sparks">
+              <li><a href="#" model-target="model3" class="model-link" aria-label="Anvil with sparks" data-i18n-aria="modeling.model3Aria">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                 <span>Anvil</span>
               </a></li>
-              <li><a href="#" model-target="model4" class="model-link" aria-label="Chainlink fence">
+              <li><a href="#" model-target="model4" class="model-link" aria-label="Chainlink fence" data-i18n-aria="modeling.model4Aria">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                 <span>Fence</span>
               </a></li>
-              <li><a href="#" model-target="model5" class="model-link" aria-label="Chessboard">
+              <li><a href="#" model-target="model5" class="model-link" aria-label="Chessboard" data-i18n-aria="modeling.model5Aria">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                 <span>Chessboard</span>
               </a></li>
-              <li><a href="#" model-target="model6" class="model-link" aria-label="Staircase render">
+              <li><a href="#" model-target="model6" class="model-link" aria-label="Staircase render" data-i18n-aria="modeling.model6Aria">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                 <span>Staircase</span>
               </a></li>
@@ -481,29 +485,29 @@
           <div class="model-display">
             <div id="model1" class="model active">
               <img src="img/SuomiKP.png" alt="Low-poly Suomi KP/-31 submachine gun 3D model rendered in Blender" loading="lazy" decoding="async" data-lightbox="true">
-              <p>Low-poly model of a Suomi KP/-31 submachine gun</p>
+              <p data-i18n="modeling.model1">Low-poly model of a Suomi KP/-31 submachine gun</p>
             </div>
             <div id="model2" class="model">
               <video src="video/Pillow.mp4" controls width="100%" height="auto" preload="metadata" loading="lazy">
                 Your browser does not support the video tag.
               </video>
-              <p>Blender physics simulation with pillow dynamics</p>
+              <p data-i18n="modeling.model2">Blender physics simulation with pillow dynamics</p>
             </div>
             <div id="model3" class="model">
               <img src="img/Anvil.png" alt="Anvil 3D model with simulated spark particle effects rendered in Blender" loading="lazy" decoding="async" data-lightbox="true">
-              <p>Render of an anvil with simulated sparks</p>
+              <p data-i18n="modeling.model3">Render of an anvil with simulated sparks</p>
             </div>
             <div id="model4" class="model">
               <img src="img/ChainFence.png" alt="Chainlink fence 3D model created in Blender with realistic materials" loading="lazy" decoding="async" data-lightbox="true">
-              <p>Chainlink fence model created in Blender</p>
+              <p data-i18n="modeling.model4">Chainlink fence model created in Blender</p>
             </div>
             <div id="model5" class="model">
               <img src="img/Chessboard.png" alt="High-detail chessboard 3D model with intricate geometric patterns" loading="lazy" decoding="async" data-lightbox="true">
-              <p>High-detail model of a chessboard</p>
+              <p data-i18n="modeling.model5">High-detail model of a chessboard</p>
             </div>
             <div id="model6" class="model">
               <img src="img/Staircase.jpg" alt="Modern staircase 3D architectural visualization rendered in Blender" loading="lazy" decoding="async" data-lightbox="true">
-              <p>Render of a modern staircase, part of my thesis work</p>
+              <p data-i18n="modeling.model6">Render of a modern staircase, part of my thesis work</p>
             </div>
           </div>
         </div>
@@ -522,7 +526,7 @@
   </div>
 
   <footer class="footer">
-    <p>© 2026 Markus Juppi • Built with HTML + CSS + JavaScript</p>
+    <p data-i18n="footer">© 2026 Markus Juppi • Built with HTML + CSS + JavaScript</p>
   </footer>
 
   <script src="script.js"></script>
