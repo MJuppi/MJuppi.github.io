@@ -130,7 +130,7 @@ const translations = {
     "experience.badge2": "Harjoittelu",
     "experience.company2": "StarJump Startup – Kesä 2024",
     "experience.detail2": "Immersiivisen liikuntavideon sisällön tuotanto",
-    "experience.role3": "Käytäväpäällikkö & 3D-mallinnuksen tuki",
+    "experience.role3": "Kirjanpitäjä & 3D-mallinnuksen tuki",
     "experience.badge3": "Sotilaspalvelus",
     "experience.company3": "Puolustusvoimat – Kevät 2018",
     "experience.detail3a": "Virtuaaliopetusympäristön tuki",
@@ -241,13 +241,13 @@ document.addEventListener("DOMContentLoaded", () => {
     en: [
       "Full-Stack Developer",
       "3D Modeling Enthusiast",
-      "Local AI Explorer",
+      "Local AI Solutions",
       "Creative Problem Solver",
     ],
     fi: [
       "Full-Stack-kehittäjä",
       "3D-mallinnuksen harrastaja",
-      "Paikallinen AI-keksijä",
+      "Lokaalit AI-ratkaisut",
       "Luova ongelmanratkaisija",
     ],
   };
